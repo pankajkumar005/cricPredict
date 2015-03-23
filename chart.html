@@ -1,0 +1,33 @@
+<html style="height: 100%;">
+    <head>
+        <title>Cricket Predict</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script>
+        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript" src="js/config.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/charts.js"></script>
+		
+        
+    </head>
+    <body style="width:100%">
+        <div style="height:80%; padding: 20px;">
+            <div class="chartCt" style="width:100%; height:100%"></div>
+        </div>
+        <div style="height:10%; padding: 20px;">
+            <div id="brushCt" class="brushCt" style="width:100%; height:100%"></div>
+        </div>
+        <script>
+		
+			d3.json("data/consolidated.json", function(data) {
+			
+				var config = getConfig();
+				drawChart(".chartCt", data, config);
+				
+			});
+		
+			
+        </script>
+    </body>
+</html>
+
+
